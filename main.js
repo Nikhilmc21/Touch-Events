@@ -64,10 +64,12 @@ var last_position_of_x, last_position_of_y;
         document.getElementById("myCanvas").height = new_height;
         document.body.style.overflow = "hidden"
     } 
+    canvas.addEventListener("touchstart", my_touchstart);
     function my_touchstart(e){
     last_position_of_x = e.touches[0].clientX - canvas.offsetLeft;
     last_position_of_y = e.touches[0].clientY - canvas.offsetTop;
     }
+    canvas.addEventListener("touchmove", my_touchmove);
     function my_touchmove(e){
         current_position_of_touch_x = e.touches[0].clientX - canvas.offsetLeft;
         current_position_of_touch_y = e.touches[0].clientY - canvas.offsetTop;
